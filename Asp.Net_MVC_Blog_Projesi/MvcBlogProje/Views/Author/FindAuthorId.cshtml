@@ -1,0 +1,68 @@
+﻿@model EntityLayer.Concrete.Author
+@{
+    ViewBag.Title = "FindAuthorId";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<h2>YAZAR GÜNCELLEME PANELİ</h2>
+
+
+
+
+@using (Html.BeginForm("FindAuthorId", "Author", FormMethod.Post))
+
+
+{
+
+    @Html.Label("ID")
+    @Html.TextBoxFor(x => x.AuthorId, new { @class = "form-control" })
+
+    <br />
+
+    @Html.Label("AD SOYAD")
+    @Html.TextBoxFor(x => x.AuthorName, new { @class = "form-control" })
+
+    <br />
+
+    @Html.Label("Resim Yolu")
+    @Html.TextBoxFor(x => x.AuthorImage, new { @class = "form-control" })
+
+    <br />
+
+
+    @Html.Label("Yazar Yetenekler")
+    @Html.TextBoxFor(x => x.AboutTitle, new { @class = "form-control" })
+
+    <br />
+
+
+    @Html.Label("Yazar Statüsü")
+    @Html.TextBoxFor(x => x.AboutShort, new { @class = "form-control" })
+
+    <br />
+
+
+    @Html.Label("Mail Adresi")
+    @Html.TextBoxFor(x => x.Mail, new { @class = "form-control" })
+
+    <br />
+
+
+    @Html.Label("Telefon")
+    @Html.TextBoxFor(x => x.PhoneNumber, new { @class = "form-control" })
+
+    <br />
+
+    @Html.Label("Şifre")
+    @Html.TextBoxFor(x => x.AuthorPassword, new { @class = "form-control" })
+
+    <br />
+
+    @Html.Label("Hakkında")
+    @Html.TextBoxFor(x => x.AhuthotAbout, new { @class = "form-control" })
+
+    <br />
+
+    <button class="btn btn-primary">EKLE <i class="fa fa-pencil"></i></button>
+
+}

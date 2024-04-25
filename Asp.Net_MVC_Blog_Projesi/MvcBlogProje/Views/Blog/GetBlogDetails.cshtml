@@ -1,0 +1,49 @@
+﻿@model EntityLayer.Concrete.Blog
+@{
+    ViewBag.Title = "GetBlogDetails";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<h2>BLOG GÜNCELLEME PANELİ</h2>
+
+@using (Html.BeginForm("GetBlogDetails", "Blog", FormMethod.Post))
+{
+    @Html.Label("BLOG ID")
+    @Html.TextBoxFor(x => x.BlogId, new { @class = "form-control" })
+
+    <br />
+
+    @Html.Label("BLOG BAŞLIK")
+    @Html.TextBoxFor(x => x.BlogTitle, new { @class = "form-control" })
+
+    <br />
+
+    @Html.Label("KATEGORİ")
+    @Html.DropDownListFor(x => x.CategoryId, (List<SelectListItem>)@ViewBag.CategoryName, new { @class = "form-control" })
+
+    <br />
+
+    @Html.Label("RESİM YOLU")
+    @Html.TextBoxFor(x => x.BlogImage, new { @class = "form-control" })
+
+    <br />
+
+    @Html.Label("TARİH")
+    @Html.TextBoxFor(x => x.BlogDate, new { @class = "form-control" })
+
+    <br />
+
+    @Html.Label("YAZAR")
+    @Html.DropDownListFor(x => x.Author.AuthorId, (List<SelectListItem>)@ViewBag.AuthorName, new { @class = "form-control" })
+
+    <br />
+
+    @Html.Label("RESİM YOLU")
+    @Html.TextAreaFor(x => x.BlogContent, new { @class = "form-control", @rows = 10 })
+
+
+    <br />
+
+    <button class="btn btn-success">BLOG BİLGİLERİNİ EKLE</button>
+
+}

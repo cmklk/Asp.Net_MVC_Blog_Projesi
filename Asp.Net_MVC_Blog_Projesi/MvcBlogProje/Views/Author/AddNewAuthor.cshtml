@@ -1,0 +1,58 @@
+﻿@model EntityLayer.Concrete.Author
+@{
+    ViewBag.Title = "AddNewAuthor";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<h2 class="my-4 text-danger">YENİ YAZAR EKLEME PANELİ</h2>
+
+@using (Html.BeginForm("AddNewAuthor", "Author", FormMethod.Post))
+{
+    @Html.Label("AD SOYAD")
+    @Html.TextBoxFor(x => x.AuthorName, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.AuthorName);
+
+    <br />
+
+    @Html.Label("Resim Yolu")
+    @Html.TextBoxFor(x => x.AuthorImage, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.AuthorImage);
+    <br />
+
+
+    @Html.Label("Yazar Yetenekler")
+    @Html.TextBoxFor(x => x.AboutTitle, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.AboutTitle);
+    <br />
+
+
+    @Html.Label("Yazar Statüsü")
+    @Html.TextBoxFor(x => x.AboutShort, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.AboutShort);
+    <br />
+
+
+    @Html.Label("Mail Adresi")
+    @Html.TextBoxFor(x => x.Mail, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.Mail);
+    <br />
+
+
+    @Html.Label("Telefon")
+    @Html.TextBoxFor(x => x.PhoneNumber, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.PhoneNumber);
+    <br />
+
+    @Html.Label("Şifre")
+    @Html.TextBoxFor(x => x.AuthorPassword, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.AuthorPassword);
+    <br />
+
+    @Html.Label("Hakkında")
+    @Html.TextBoxFor(x => x.AhuthotAbout, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.AhuthotAbout);
+    <br />
+
+    <button class="btn btn-primary">EKLE <i class="fa fa-pencil"></i></button>
+
+}

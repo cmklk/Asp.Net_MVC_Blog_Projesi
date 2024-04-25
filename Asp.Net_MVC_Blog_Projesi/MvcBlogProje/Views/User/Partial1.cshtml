@@ -1,0 +1,71 @@
+﻿@model IEnumerable<EntityLayer.Concrete.Author>
+
+
+<div class="user-panel col-12">
+
+
+    @using (Html.BeginForm("UserUpdate", "User", FormMethod.Post))
+    {
+        foreach (var x in Model)
+        {
+
+
+            <div class="form-group">
+                <label>ID</label>
+                <input type="text" class="form-control" name="AuthorId" value="@x.AuthorId" />
+            </div>
+
+            <br />
+
+            <div class="form-group">
+                <label>AD</label>
+                <input type="text" class="form-control" name="AuthorName" value="@x.AuthorName" />
+            </div>
+
+            <br />
+
+            <div class="form-group">
+                <label>RESİM</label>
+                <input type="text" class="form-control" name="AuthorImage" value="@x.AuthorImage" />
+            </div>
+
+            <br />
+
+            <div class="form-group">
+                <label>YAZAR BAŞLIK</label>
+                <input type="text" class="form-control" name="AboutTitle" value="@x.AboutTitle" />
+            </div>
+
+            <br />
+
+            <div class="form-group">
+                <label>KISACA HAKKINDA</label>
+                <input type="text" class="form-control" name="AboutShort" value="@x.AboutShort" />
+            </div>
+
+            <br />
+
+            <div class="form-group">
+                <label>ŞİFRE</label>
+                <input type="text" class="form-control" name="AuthorPassword" value="@x.AuthorPassword" />
+            </div>
+
+
+            <br />
+            <div class="form-group">
+                <label>TELEFON NUMARASI</label>
+                <input type="text" class="form-control" name="PhoneNumber" value="@x.PhoneNumber" />
+            </div>
+
+            <br />
+
+            <div class="form-group">
+                <label>YAZAR HAKKINDA</label>
+                <input type="text" class="form-control" name="AhuthotAbout" value="@x.AhuthotAbout" />
+            </div>
+
+            <button class="btn btn-success">BİLGİLERİMİ GÜNCELLE</button>
+
+        }
+    }
+</div>

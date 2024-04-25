@@ -1,0 +1,76 @@
+﻿@model IEnumerable<EntityLayer.Concrete.Blog>
+@{
+    ViewBag.Title = "AdminBlog";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+@{ string color = "";}
+<h2 class="my-4">Blog Listesi</h2>
+
+
+<table class="table table-striped table-hover">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>BAŞLIK</th>
+            <th>KATEGORİ</th>
+            <th>TARİH</th>
+            <th>SİL</th>
+            <th>GÜNCELLE</th>
+            <th>DETAYLAR</th>
+            <th>YORUMLAR</th>
+        </tr>
+    </thead>
+
+
+    <tbody>
+        @foreach (var x in Model)
+        {
+
+            if (x.Category.CategoryName == "SPOR")
+            {
+                color = "badge bg-primary ";
+            }
+
+            if (x.Category.CategoryName == "TARİH")
+            {
+                color = "badge bg-success";
+            }
+
+            if (x.Category.CategoryName == "YAZILIM")
+            {
+                color = "badge bg-warning";
+            }
+
+
+            if (x.Category.CategoryName == "EKONOMİ")
+            {
+                color = "badge bg-info";
+            }
+
+            if (x.Category.CategoryName == "SEYAHAT")
+            {
+                color = "badge bg-dark";
+            }
+
+            if (x.Category.CategoryName == "KÜLTÜR & SANAT")
+            {
+                color = "badge bg-danger";
+            }
+
+
+
+                <tr>
+                    <td>@x.BlogId</td>
+                    <td>@x.BlogTitle</td>
+                    <td><img src="@x.Author.AuthorImage" style="height:100px; width:100px;object-fit:cover; border-radius:100%;" /></td>
+                    <td><span class="@color text-white py-1 px-2">@x.Category.CategoryName</span></td>
+                    <td>@Convert.ToDateTime(x.BlogDate).ToString("dd-MM-yyyy")</td>
+                    <td><a href="/Blog/deleteBlog/@x.BlogId" class="btn btn-danger">SİL</a></td>
+                    <td><a href="/Blog/BlogDetails/@x.BlogId" class="btn btn-dark">DETAYLAR</a></td>
+                    <td><a href="/Blog/BlogCommentDetails/@x.BlogId" class="btn btn-success">YORUMLAR</a></td>
+                </tr>
+            }
+    </tbody>
+</table>
+
+<a href="/Blog/AddNewBlog" class="btn btn-primary">BLOG EKLE</a>

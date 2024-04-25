@@ -1,0 +1,37 @@
+﻿@model EntityLayer.Concrete.Contact
+@{
+    ViewBag.Title = "getContactDetails";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<h2 class="my-4 text-danger">MESAJ DETAYLARI</h2>
+
+
+<form>
+    <div class="form-group">
+        @Html.Label("AD")
+        @Html.TextBoxFor(x => x.Name, new { @class = "form-control" })
+    </div>
+
+    <div class="form-group ">
+        @Html.Label("SOYAD")
+        @Html.TextBoxFor(x => x.Surname, new { @class = "form-control" })
+    </div>
+
+    <div class="form-group ">
+        @Html.Label("MAİL")
+        @Html.TextBoxFor(x => x.Mail, new { @class = "form-control" })
+    </div>
+ 
+    <div class="form-group">
+        @Html.Label("KONU")
+        @Html.TextBoxFor(x => x.Subject, new { @class = "form-control" })
+    </div>
+
+    <div class="form-group ">
+        @Html.Label("MESAJ")
+        @Html.TextAreaFor(x => x.Message, new { @class = "form-control", @rows = 4 })
+    </div>
+
+
+</form>

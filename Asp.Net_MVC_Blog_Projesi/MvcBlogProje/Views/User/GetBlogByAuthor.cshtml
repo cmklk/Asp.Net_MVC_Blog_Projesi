@@ -1,0 +1,79 @@
+﻿@using EntityLayer.Concrete
+@model List<Blog>
+@{
+    ViewBag.Title = "GetBlogByAuthor";
+    Layout = "~/Views/Shared/AuthorLayout.cshtml";
+}
+@{string color = "";}
+<h3 class="my-4 text-danger">BLOG LİSTEM</h3>
+<table class="table table-bordered table-hover">
+    <thead>
+        <tr>
+            <td>ID</td>
+            <td>BLOG BAŞLIK</td>
+            <td>ORTALAMA PUAN</td>
+          
+        </tr>
+    </thead>
+
+    <tbody>
+        @foreach(var x in Model)
+        {
+
+
+            if(x.BlogRating>=50 && x.BlogRating <= 60)
+            {
+                color = "text-white bg-danger mb-3";
+            }
+
+
+            if (x.BlogRating >= 60 && x.BlogRating <= 70)
+            {
+                color = "text-white bg-dark mb-3";
+            }
+
+
+            if (x.BlogRating >= 70 && x.BlogRating <= 80)
+            {
+                color = "text-white bg-info mb-3";
+            }
+
+            if (x.BlogRating >= 80 && x.BlogRating <= 90)
+            {
+                color = "text-white bg-warning mb-3";
+            }
+
+            if (x.BlogRating >= 90 && x.BlogRating <= 100)
+            {
+                color = "text-white bg-success mb-3";
+            }
+
+
+        <tr>
+            <td>@x.BlogId</td>
+            <td>@x.BlogTitle</td>
+            <td>
+                <div class="user_progress_bar">
+                    <div class="progress_bar">
+
+                        <span class="skill">Alınan Puan = @x.BlogRating</span>
+                        <div class="progress skill-bar ">
+                            <div class="progress-bar progress-bar-animated progress-bar-striped" role="progressbar" aria-valuenow="@x.BlogRating" aria-valuemin="0" aria-valuemax="100" style="width:@x.BlogRating%">
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </td>
+          
+            <td><a href="/User/UpdateBlog/@x.BlogId" class="btn btn-primary">DÜZENLE <i class="fa fa-refresh"></i></a></td>
+            <td><a href="#" class="btn btn-danger">SİL <i class="fa fa-trash"></i></a></td>
+            
+        </tr>
+        }
+    </tbody>
+</table>
+
+
+
+<a href="/User/AddBlog" class="btn btn-primary">BLOG EKLE</a>

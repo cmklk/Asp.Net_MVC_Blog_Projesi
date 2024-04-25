@@ -1,0 +1,49 @@
+﻿@model IEnumerable<EntityLayer.Concrete.About>
+@{
+    ViewBag.Title = "AdminAboutList";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<h2 class="my-4 text-danger">HAKKIMIZDA PANELİ</h2>
+
+@using (Html.BeginForm("AdminAboutList", "About", FormMethod.Post))
+{
+    foreach (var x in Model)
+    {
+
+        <div class="form-group">
+            @Html.Label("ID")
+            <input type="text" class="form-control" name="AboutId" value="@x.AboutId" />
+        </div>
+        <div class="form-group">
+            @Html.Label("Resim 1")
+            <input type="text" class="form-control" name="AboutImage1" value="@x.AboutImage1" />
+        </div>
+
+        <br />
+
+        <div class="form-group">
+            @Html.Label("Resim 2")
+            <input type="text" class="form-control" name="AboutImage2" value="@x.AboutImage2" />
+        </div>
+
+        <div class="form-group">
+            @Html.Label("İçerik 1")
+            <textarea class="form-control" rows="4" name="AboutContent1">@x.AboutContent1</textarea>
+        </div>
+
+
+        <div class="form-group">
+            @Html.Label("İçerik 2")
+            <textarea class="form-control" rows="4" name="AboutContent2">@x.AboutContent2</textarea>
+        </div>
+
+
+
+    }
+
+    <button class="btn btn-success">GÜNCELLE</button>
+}
+
+
+

@@ -1,0 +1,951 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props')" />
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{B1F9969D-4083-4268-A986-15FB0BC8BCEF}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>MvcBlogProje</RootNamespace>
+    <AssemblyName>MvcBlogProje</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <TypeScriptToolsVersion>3.1</TypeScriptToolsVersion>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="FluentValidation, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7de548da2fbae0f0, processorArchitecture=MSIL">
+      <HintPath>..\packages\FluentValidation.11.5.1\lib\netstandard2.0\FluentValidation.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="PagedList, Version=1.17.0.0, Culture=neutral, PublicKeyToken=abbb863e9397c5e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\PagedList.1.17.0.0\lib\net40\PagedList.dll</HintPath>
+    </Reference>
+    <Reference Include="PagedList.Mvc, Version=4.5.0.0, Culture=neutral, PublicKeyToken=abbb863e9397c5e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\PagedList.Mvc.4.5.0.0\lib\net40\PagedList.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=4.0.4.1, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.4.5.2\lib\netstandard2.0\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Threading.Tasks.Extensions, Version=4.2.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Threading.Tasks.Extensions.4.5.2\lib\netstandard2.0\System.Threading.Tasks.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.4\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.4.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.4\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.4\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.4\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.4\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.4\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.11.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.6.0\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\AboutController.cs" />
+    <Compile Include="Controllers\AdminController.cs" />
+    <Compile Include="Controllers\AuthorAboutController.cs" />
+    <Compile Include="Controllers\AuthorController.cs" />
+    <Compile Include="Controllers\BlogController.cs" />
+    <Compile Include="Controllers\CategoryController.cs" />
+    <Compile Include="Controllers\ChartController.cs" />
+    <Compile Include="Controllers\CommentController.cs" />
+    <Compile Include="Controllers\ContactController.cs" />
+    <Compile Include="Controllers\ErrorsController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\LoginController.cs" />
+    <Compile Include="Controllers\MailSubscribeController.cs" />
+    <Compile Include="Controllers\MessageController.cs" />
+    <Compile Include="Controllers\UserController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Chart.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Roles\BlogRoles.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Admin_Login_Page_Blog\index.html" />
+    <Content Include="Admin_Login_Page_Blog\main.js" />
+    <Content Include="Admin_Login_Page_Blog\style.css" />
+    <Content Include="Admin_Template\.gitattributes" />
+    <Content Include="Admin_Template\404_error.html" />
+    <Content Include="Admin_Template\calendar.html" />
+    <Content Include="Admin_Template\charts.html" />
+    <Content Include="Admin_Template\contact.html" />
+    <Content Include="Admin_Template\contact.php" />
+    <Content Include="Admin_Template\css\animate.css" />
+    <Content Include="Admin_Template\css\baguetteBox.min.css" />
+    <Content Include="Admin_Template\css\bootstrap-grid.css" />
+    <Content Include="Admin_Template\css\bootstrap-grid.min.css" />
+    <Content Include="Admin_Template\css\bootstrap-reboot.css" />
+    <Content Include="Admin_Template\css\bootstrap-reboot.min.css" />
+    <Content Include="Admin_Template\css\bootstrap-select.css" />
+    <Content Include="Admin_Template\css\bootstrap.css" />
+    <Content Include="Admin_Template\css\bootstrap.min.css" />
+    <Content Include="Admin_Template\css\calendar.css" />
+    <Content Include="Admin_Template\css\calendar.min.css" />
+    <Content Include="Admin_Template\css\color_2.css" />
+    <Content Include="Admin_Template\css\custom.css" />
+    <Content Include="Admin_Template\css\flaticon.css" />
+    <Content Include="Admin_Template\css\font-awesome.css" />
+    <Content Include="Admin_Template\css\font-awesome.min.css" />
+    <Content Include="Admin_Template\css\jquery.fancybox.css" />
+    <Content Include="Admin_Template\css\jquery.fancybox.min.css" />
+    <Content Include="Admin_Template\css\owl.carousel.css" />
+    <Content Include="Admin_Template\css\perfect-scrollbar.css" />
+    <Content Include="Admin_Template\css\responsive.css" />
+    <Content Include="Admin_Template\css\semantic.min.css" />
+    <Content Include="Admin_Template\dashboard.html" />
+    <Content Include="Admin_Template\dashboard_2.html" />
+    <Content Include="Admin_Template\email.html" />
+    <Content Include="Admin_Template\fonts\flaticon.css" />
+    <Content Include="Admin_Template\fonts\flaticon.html" />
+    <Content Include="Admin_Template\fonts\Flaticon.svg" />
+    <Content Include="Admin_Template\fonts\fontawesome-webfont.svg" />
+    <Content Include="Admin_Template\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Admin_Template\general_elements.html" />
+    <Content Include="Admin_Template\icons.html" />
+    <Content Include="Admin_Template\images\landing_page\stack-of-three-black-hot-stones-spa-salon-vector-16122479.jpg" />
+    <Content Include="Admin_Template\images\layout_img\american-express.png" />
+    <Content Include="Admin_Template\images\layout_img\bg1.png" />
+    <Content Include="Admin_Template\images\layout_img\error.png" />
+    <Content Include="Admin_Template\images\layout_img\g1.jpg" />
+    <Content Include="Admin_Template\images\layout_img\g10.jpg" />
+    <Content Include="Admin_Template\images\layout_img\g11.jpg" />
+    <Content Include="Admin_Template\images\layout_img\g12.jpg" />
+    <Content Include="Admin_Template\images\layout_img\g13.jpg" />
+    <Content Include="Admin_Template\images\layout_img\g14.jpg" />
+    <Content Include="Admin_Template\images\layout_img\g15.jpg" />
+    <Content Include="Admin_Template\images\layout_img\g16.jpg" />
+    <Content Include="Admin_Template\images\layout_img\g2.jpg" />
+    <Content Include="Admin_Template\images\layout_img\g3.jpg" />
+    <Content Include="Admin_Template\images\layout_img\g4.jpg" />
+    <Content Include="Admin_Template\images\layout_img\g5.jpg" />
+    <Content Include="Admin_Template\images\layout_img\g6.jpg" />
+    <Content Include="Admin_Template\images\layout_img\g7.jpg" />
+    <Content Include="Admin_Template\images\layout_img\g8.jpg" />
+    <Content Include="Admin_Template\images\layout_img\g9.jpg" />
+    <Content Include="Admin_Template\images\layout_img\login_image.jpg" />
+    <Content Include="Admin_Template\images\layout_img\map_icon.png" />
+    <Content Include="Admin_Template\images\layout_img\mastercard.png" />
+    <Content Include="Admin_Template\images\layout_img\msg1.png" />
+    <Content Include="Admin_Template\images\layout_img\msg2.png" />
+    <Content Include="Admin_Template\images\layout_img\msg3.png" />
+    <Content Include="Admin_Template\images\layout_img\msg4.png" />
+    <Content Include="Admin_Template\images\layout_img\msg5.png" />
+    <Content Include="Admin_Template\images\layout_img\pattern.png" />
+    <Content Include="Admin_Template\images\layout_img\pattern_h.png" />
+    <Content Include="Admin_Template\images\layout_img\paypal.png" />
+    <Content Include="Admin_Template\images\layout_img\user_img.jpg" />
+    <Content Include="Admin_Template\images\layout_img\visa.png" />
+    <Content Include="Admin_Template\images\logo\logo.png" />
+    <Content Include="Admin_Template\images\logo\logo_black.png" />
+    <Content Include="Admin_Template\images\logo\logo_icon.png" />
+    <Content Include="Admin_Template\index.html" />
+    <Content Include="Admin_Template\invoice.html" />
+    <Content Include="Admin_Template\js\analyser.js" />
+    <Content Include="Admin_Template\js\animate.js" />
+    <Content Include="Admin_Template\js\bootstrap-select.js" />
+    <Content Include="Admin_Template\js\bootstrap.bundle.js" />
+    <Content Include="Admin_Template\js\bootstrap.bundle.min.js" />
+    <Content Include="Admin_Template\js\bootstrap.js" />
+    <Content Include="Admin_Template\js\bootstrap.min.js" />
+    <Content Include="Admin_Template\js\calendar.js" />
+    <Content Include="Admin_Template\js\calendar.min.js" />
+    <Content Include="Admin_Template\js\Chart.bundle.js" />
+    <Content Include="Admin_Template\js\Chart.bundle.min.js" />
+    <Content Include="Admin_Template\js\Chart.js" />
+    <Content Include="Admin_Template\js\Chart.min.js" />
+    <Content Include="Admin_Template\js\chart_custom_style1.js" />
+    <Content Include="Admin_Template\js\chart_custom_style2.js" />
+    <Content Include="Admin_Template\js\custom.js" />
+    <Content Include="Admin_Template\js\custom_chart.js" />
+    <Content Include="Admin_Template\js\jquery-3.3.1.min.js" />
+    <Content Include="Admin_Template\js\jquery.fancybox.js" />
+    <Content Include="Admin_Template\js\jquery.fancybox.min.js" />
+    <Content Include="Admin_Template\js\jquery.min.js" />
+    <Content Include="Admin_Template\js\owl.carousel.js" />
+    <Content Include="Admin_Template\js\perfect-scrollbar.min.js" />
+    <Content Include="Admin_Template\js\popper.min.js" />
+    <Content Include="Admin_Template\js\semantic.min.js" />
+    <Content Include="Admin_Template\js\settings.html" />
+    <Content Include="Admin_Template\js\utils.js" />
+    <Content Include="Admin_Template\login.html" />
+    <Content Include="Admin_Template\map.html" />
+    <Content Include="Admin_Template\media_gallery.html" />
+    <Content Include="Admin_Template\modules\zingchart-3d.min.js" />
+    <Content Include="Admin_Template\modules\zingchart-animation.min.js" />
+    <Content Include="Admin_Template\modules\zingchart-api-annotations.min.js" />
+    <Content Include="Admin_Template\modules\zingchart-api-rules.min.js" />
+    <Content Include="Admin_Template\modules\zingchart-api.min.js" />
+    <Content Include="Admin_Template\modules\zingchart-area.min.js" />
+    <Content Include="Admin_Template\modules\zingchart-area3d.min.js" />
+    <Content Include="Admin_Template\modules\zingchart-boxplot.min.js" />
+    <Content Include="Admin_Template\modules\zingchart-bubble.min.js" />
+    <Content Include="Admin_Template\modules\zingchart-bubblepie.min.js" />
+    <Content Include="Admin_Template\modules\zingchart-calendar.min.js" />
+    <Content Include="Admin_Template\modules\zingchart-chord.min.js" />
+    <Content Include="Admin_Template\modules\zingchart-core.min.js" />
+    <Content Include="Admin_Template\modules\zingchart-csv.min.js" />
+    <Content Include="Admin_Template\modules\zingchart-debug.min.js" />
+    <Content Include="Admin_Template\modules\zingchart-dragging.min.js" />
+    <Content Include="Admin_Template\modules\zingchart-errorbars.min.js" />
+    <Content Include="Admin_Template\modules\zingchart-export.min.js" />
+    <Content Include="Admin_Template\modules\zingchart-gauge.min.js" />
+    <Content Include="Admin_Template\modules\zingchart-grid.min.js" />
+    <Content Include="Admin_Template\modules\zingchart-guide.min.js" />
+    <Content Include="Admin_Template\modules\zingchart-hbar.min.js" />
+    <Content Include="Admin_Template\modules\zingchart-hbar3d.min.js" />
+    <Content Include="Admin_Template\modules\zingchart-hbubble.min.js" />
+    <Content Include="Admin_Template\modules\zingchart-hbullet.min.js" />
+    <Content Include="Admin_Template\modules\zingchart-hfunnel.min.js" />
+    <Content Include="Admin_Template\modules\zingchart-history.min.js" />
+    <Content Include="Admin_Template\modules\zingchart-hscatter.min.js" />
+    <Content Include="Admin_Template\modules\zingchart-legend.min.js" />
+    <Content Include="Admin_Template\modules\zingchart-line.min.js" />
+    <Content Include="Admin_Template\modules\zingchart-line3d.min.js" />
+    <Content Include="Admin_Template\modules\zingchart-maps-afg.min.js" />
+    <Content Include="Admin_Template\modules\zingchart-maps-ago.min.js" />
+    <Content Include="Admin_Template\modules\zingchart-maps-alb.min.js" />
+    <Content Include="Admin_Template\modules\zingchart-maps-and.min.js" />
+    <Content Include="Admin_Template\modules\zingchart-maps-are.min.js" />
+    <Content Include="Admin_Template\modules\zingchart-maps-arg.min.js" />
+    <Content Include="Admin_Template\modules\zingchart-maps-arm.min.js" />
+    <Content Include="Admin_Template\modules\zingchart-maps-aus.min.js" />
+    <Content Include="Admin_Template\modules\zingchart-maps-aut.min.js" />
+    <Content Include="Admin_Template\modules\zingchart-maps-aze.min.js" />
+    <Content Include="Admin_Template\modules\zingchart-maps-bdi.min.js" />
+    <Content Include="Admin_Template\modules\zingchart-maps-bel.min.js" />
+    <Content Include="Admin_Template\modules\zingchart-maps-ben.min.js" />
+    <Content Include="Admin_Template\modules\zingchart-maps-bfa.min.js" />
+    <Content Include="Admin_Template\modules\zingchart-maps-bgr.min.js" />
+    <Content Include="Admin_Template\modules\zingchart-maps-bih.min.js" />
+    <Content Include="Admin_Template\modules\zingchart-maps-blr.min.js" />
+    <Content Include="Admin_Template\modules\zingchart-maps-bol.min.js" />
+    <Content Include="Admin_Template\modules\zingchart-maps-bra.min.js" />
+    <Content Include="Admin_Template\modules\zingchart-maps-brn.min.js" />
+    <Content Include="Admin_Template\modules\zingchart-maps-btn.min.js" />
+    <Content Include="Admin_Template\modules\zingchart-maps-bwa.min.js" />
+    <Content Include="Admin_Template\modules\zingchart-maps-caf.min.js" />
+    <Content Include="Admin_Template\modules\zingchart-maps-can.min.js" />
+    <Content Include="Admin_Template\modules\zingchart-maps-che.min.js" />
+    <Content Include="Admin_Template\modules\zingchart-maps-chl.min.js" />
+    <Content Include="Admin_Template\modules\zingchart-maps-chn.min.js" />
+    <Content Include="Admin_Template\modules\zingchart-maps-civ.min.js" />
+    <Content Include="Admin_Template\modules\zingchart-maps-cmr.min.js" />
+    <Content Include="Admin_Template\modules\zingchart-maps-cod.min.js" />
+    <Content Include="Admin_Template\modules\zingchart-maps-cog.min.js" />
+    <Content Include="Admin_Template\modules\zingchart-maps-col.min.js" />
+    <Content Include="Admin_Template\modules\zingchart-maps-cri.min.js" />
+    <Content Include="Admin_Template\modules\zingchart-maps-cub.min.js" />
+    <Content Include="Admin_Template\modules\zingchart-maps-cyp.min.js" />
+    <Content Include="Admin_Template\modules\zingchart-maps-cze.min.js" />
+    <Content Include="Admin_Template\modules\zingchart-maps-deu.min.js" />
+    <Content Include="Admin_Template\modules\zingchart-maps-dnk.min.js" />
+    <Content Include="Admin_Template\modules\zingchart-maps-ecu.min.js" />
+    <Content Include="Admin_Template\modules\zingchart-maps-egy.min.js" />
+    <Content Include="Admin_Template\modules\zingchart-maps-esp.min.js" />
+    <Content Include="Admin_Template\modules\zingchart-maps-espL2.min.js" />
+    <Content Include="Admin_Template\modules\zingchart-maps-est.min.js" />
+    <Content Include="Admin_Template\modules\zingchart-maps-eth.min.js" />
+    <Content Include="Admin_Template\modules\zingchart-maps-fin.min.js" />
+    <Content Include="Admin_Template\modules\zingchart-maps-fra.min.js" />
+    <Content Include="Admin_Template\modules\zingchart-maps-fraL2.min.js" />
+    <Content Include="Admin_Template\modules\zingchart-maps-gab.min.js" />
+    <Content Include="Admin_Template\modules\zingchart-maps-gbr.min.js" />
+    <Content Include="Admin_Template\modules\zingchart-maps-gbrL2.min.js" />
+    <Content Include="Admin_Template\modules\zingchart-maps-geojson.min.js" />
+    <Content Include="Admin_Template\modules\zingchart-maps-gha.min.js" />
+    <Content Include="Admin_Template\modules\zingchart-maps-gmb.min.js" />
+    <Content Include="Admin_Template\modules\zingchart-maps-gnb.min.js" />
+    <Content Include="Admin_Template\modules\zingchart-maps-grc.min.js" />
+    <Content Include="Admin_Template\modules\zingchart-maps-gtm.min.js" />
+    <Content Include="Admin_Template\modules\zingchart-maps-guf.min.js" />
+    <Content Include="Admin_Template\modules\zingchart-maps-guy.min.js" />
+    <Content Include="Admin_Template\modules\zingchart-maps-hrv.min.js" />
+    <Content Include="Admin_Template\modules\zingchart-maps-hun.min.js" />
+    <Content Include="Admin_Template\modules\zingchart-maps-ind.min.js" />
+    <Content Include="Admin_Template\modules\zingchart-maps-irl.min.js" />
+    <Content Include="Admin_Template\modules\zingchart-maps-irn.min.js" />
+    <Content Include="Admin_Template\modules\zingchart-maps-isl.min.js" />
+    <Content Include="Admin_Template\modules\zingchart-maps-isr.min.js" />
+    <Content Include="Admin_Template\modules\zingchart-maps-ita.min.js" />
+    <Content Include="Admin_Template\modules\zingchart-maps-jpn.min.js" />
+    <Content Include="Admin_Template\modules\zingchart-maps-kaz.min.js" />
+    <Content Include="Admin_Template\modules\zingchart-maps-ken.min.js" />
+    <Content Include="Admin_Template\modules\zingchart-maps-kor.min.js" />
+    <Content Include="Admin_Template\modules\zingchart-maps-kwt.min.js" />
+    <Content Include="Admin_Template\modules\zingchart-maps-lao.min.js" />
+    <Content Include="Admin_Template\modules\zingchart-maps-lbr.min.js" />
+    <Content Include="Admin_Template\modules\zingchart-maps-lie.min.js" />
+    <Content Include="Admin_Template\modules\zingchart-maps-ltu.min.js" />
+    <Content Include="Admin_Template\modules\zingchart-maps-lux.min.js" />
+    <Content Include="Admin_Template\modules\zingchart-maps-lva.min.js" />
+    <Content Include="Admin_Template\modules\zingchart-maps-mda.min.js" />
+    <Content Include="Admin_Template\modules\zingchart-maps-mex.min.js" />
+    <Content Include="Admin_Template\modules\zingchart-maps-mkd.min.js" />
+    <Content Include="Admin_Template\modules\zingchart-maps-mne.min.js" />
+    <Content Include="Admin_Template\modules\zingchart-maps-moz.min.js" />
+    <Content Include="Admin_Template\modules\zingchart-maps-nam.min.js" />
+    <Content Include="Admin_Template\modules\zingchart-maps-ncl.min.js" />
+    <Content Include="Admin_Template\modules\zingchart-maps-nga.min.js" />
+    <Content Include="Admin_Template\modules\zingchart-maps-nld.min.js" />
+    <Content Include="Admin_Template\modules\zingchart-maps-nor.min.js" />
+    <Content Include="Admin_Template\modules\zingchart-maps-nzl.min.js" />
+    <Content Include="Admin_Template\modules\zingchart-maps-omn.min.js" />
+    <Content Include="Admin_Template\modules\zingchart-maps-pak.min.js" />
+    <Content Include="Admin_Template\modules\zingchart-maps-pan.min.js" />
+    <Content Include="Admin_Template\modules\zingchart-maps-per.min.js" />
+    <Content Include="Admin_Template\modules\zingchart-maps-phl.min.js" />
+    <Content Include="Admin_Template\modules\zingchart-maps-png.min.js" />
+    <Content Include="Admin_Template\modules\zingchart-maps-pol.min.js" />
+    <Content Include="Admin_Template\modules\zingchart-maps-prt.min.js" />
+    <Content Include="Admin_Template\modules\zingchart-maps-qat.min.js" />
+    <Content Include="Admin_Template\modules\zingchart-maps-rou.min.js" />
+    <Content Include="Admin_Template\modules\zingchart-maps-rus.min.js" />
+    <Content Include="Admin_Template\modules\zingchart-maps-rwa.min.js" />
+    <Content Include="Admin_Template\modules\zingchart-maps-sen.min.js" />
+    <Content Include="Admin_Template\modules\zingchart-maps-slv.min.js" />
+    <Content Include="Admin_Template\modules\zingchart-maps-srb.min.js" />
+    <Content Include="Admin_Template\modules\zingchart-maps-sur.min.js" />
+    <Content Include="Admin_Template\modules\zingchart-maps-svk.min.js" />
+    <Content Include="Admin_Template\modules\zingchart-maps-svn.min.js" />
+    <Content Include="Admin_Template\modules\zingchart-maps-swe.min.js" />
+    <Content Include="Admin_Template\modules\zingchart-maps-tha.min.js" />
+    <Content Include="Admin_Template\modules\zingchart-maps-tjk.min.js" />
+    <Content Include="Admin_Template\modules\zingchart-maps-topojson.min.js" />
+    <Content Include="Admin_Template\modules\zingchart-maps-tun.min.js" />
+    <Content Include="Admin_Template\modules\zingchart-maps-tur.min.js" />
+    <Content Include="Admin_Template\modules\zingchart-maps-twn.min.js" />
+    <Content Include="Admin_Template\modules\zingchart-maps-uga.min.js" />
+    <Content Include="Admin_Template\modules\zingchart-maps-ukr.min.js" />
+    <Content Include="Admin_Template\modules\zingchart-maps-ury.min.js" />
+    <Content Include="Admin_Template\modules\zingchart-maps-usa.min.js" />
+    <Content Include="Admin_Template\modules\zingchart-maps-usa_ak.min.js" />
+    <Content Include="Admin_Template\modules\zingchart-maps-usa_al.min.js" />
+    <Content Include="Admin_Template\modules\zingchart-maps-usa_ar.min.js" />
+    <Content Include="Admin_Template\modules\zingchart-maps-usa_az.min.js" />
+    <Content Include="Admin_Template\modules\zingchart-maps-usa_ca.min.js" />
+    <Content Include="Admin_Template\modules\zingchart-maps-usa_co.min.js" />
+    <Content Include="Admin_Template\modules\zingchart-maps-usa_ct.min.js" />
+    <Content Include="Admin_Template\modules\zingchart-maps-usa_dc.min.js" />
+    <Content Include="Admin_Template\modules\zingchart-maps-usa_de.min.js" />
+    <Content Include="Admin_Template\modules\zingchart-maps-usa_fl.min.js" />
+    <Content Include="Admin_Template\modules\zingchart-maps-usa_ga.min.js" />
+    <Content Include="Admin_Template\modules\zingchart-maps-usa_hi.min.js" />
+    <Content Include="Admin_Template\modules\zingchart-maps-usa_ia.min.js" />
+    <Content Include="Admin_Template\modules\zingchart-maps-usa_id.min.js" />
+    <Content Include="Admin_Template\modules\zingchart-maps-usa_il.min.js" />
+    <Content Include="Admin_Template\modules\zingchart-maps-usa_in.min.js" />
+    <Content Include="Admin_Template\modules\zingchart-maps-usa_ks.min.js" />
+    <Content Include="Admin_Template\modules\zingchart-maps-usa_ky.min.js" />
+    <Content Include="Admin_Template\modules\zingchart-maps-usa_la.min.js" />
+    <Content Include="Admin_Template\modules\zingchart-maps-usa_ma.min.js" />
+    <Content Include="Admin_Template\modules\zingchart-maps-usa_md.min.js" />
+    <Content Include="Admin_Template\modules\zingchart-maps-usa_me.min.js" />
+    <Content Include="Admin_Template\modules\zingchart-maps-usa_mi.min.js" />
+    <Content Include="Admin_Template\modules\zingchart-maps-usa_mn.min.js" />
+    <Content Include="Admin_Template\modules\zingchart-maps-usa_mo.min.js" />
+    <Content Include="Admin_Template\modules\zingchart-maps-usa_ms.min.js" />
+    <Content Include="Admin_Template\modules\zingchart-maps-usa_mt.min.js" />
+    <Content Include="Admin_Template\modules\zingchart-maps-usa_nc.min.js" />
+    <Content Include="Admin_Template\modules\zingchart-maps-usa_nd.min.js" />
+    <Content Include="Admin_Template\modules\zingchart-maps-usa_ne.min.js" />
+    <Content Include="Admin_Template\modules\zingchart-maps-usa_nh.min.js" />
+    <Content Include="Admin_Template\modules\zingchart-maps-usa_nj.min.js" />
+    <Content Include="Admin_Template\modules\zingchart-maps-usa_nm.min.js" />
+    <Content Include="Admin_Template\modules\zingchart-maps-usa_nv.min.js" />
+    <Content Include="Admin_Template\modules\zingchart-maps-usa_ny.min.js" />
+    <Content Include="Admin_Template\modules\zingchart-maps-usa_oh.min.js" />
+    <Content Include="Admin_Template\modules\zingchart-maps-usa_ok.min.js" />
+    <Content Include="Admin_Template\modules\zingchart-maps-usa_or.min.js" />
+    <Content Include="Admin_Template\modules\zingchart-maps-usa_pa.min.js" />
+    <Content Include="Admin_Template\modules\zingchart-maps-usa_ri.min.js" />
+    <Content Include="Admin_Template\modules\zingchart-maps-usa_sc.min.js" />
+    <Content Include="Admin_Template\modules\zingchart-maps-usa_sd.min.js" />
+    <Content Include="Admin_Template\modules\zingchart-maps-usa_tn.min.js" />
+    <Content Include="Admin_Template\modules\zingchart-maps-usa_tx.min.js" />
+    <Content Include="Admin_Template\modules\zingchart-maps-usa_ut.min.js" />
+    <Content Include="Admin_Template\modules\zingchart-maps-usa_va.min.js" />
+    <Content Include="Admin_Template\modules\zingchart-maps-usa_vt.min.js" />
+    <Content Include="Admin_Template\modules\zingchart-maps-usa_wa.min.js" />
+    <Content Include="Admin_Template\modules\zingchart-maps-usa_wi.min.js" />
+    <Content Include="Admin_Template\modules\zingchart-maps-usa_wv.min.js" />
+    <Content Include="Admin_Template\modules\zingchart-maps-usa_wy.min.js" />
+    <Content Include="Admin_Template\modules\zingchart-maps-uzb.min.js" />
+    <Content Include="Admin_Template\modules\zingchart-maps-ven.min.js" />
+    <Content Include="Admin_Template\modules\zingchart-maps-vnm.min.js" />
+    <Content Include="Admin_Template\modules\zingchart-maps-world-continents.min.js" />
+    <Content Include="Admin_Template\modules\zingchart-maps-world-countries.min.js" />
+    <Content Include="Admin_Template\modules\zingchart-maps-yem.min.js" />
+    <Content Include="Admin_Template\modules\zingchart-maps-zaf.min.js" />
+    <Content Include="Admin_Template\modules\zingchart-maps-zmb.min.js" />
+    <Content Include="Admin_Template\modules\zingchart-maps-zwe.min.js" />
+    <Content Include="Admin_Template\modules\zingchart-maps.min.js" />
+    <Content Include="Admin_Template\modules\zingchart-navpie.min.js" />
+    <Content Include="Admin_Template\modules\zingchart-nestedpie.min.js" />
+    <Content Include="Admin_Template\modules\zingchart-objects.min.js" />
+    <Content Include="Admin_Template\modules\zingchart-pareto.min.js" />
+    <Content Include="Admin_Template\modules\zingchart-patterns.min.js" />
+    <Content Include="Admin_Template\modules\zingchart-piano.min.js" />
+    <Content Include="Admin_Template\modules\zingchart-pie.min.js" />
+    <Content Include="Admin_Template\modules\zingchart-pie3d.min.js" />
+    <Content Include="Admin_Template\modules\zingchart-populationpyramid.min.js" />
+    <Content Include="Admin_Template\modules\zingchart-preview.min.js" />
+    <Content Include="Admin_Template\modules\zingchart-r.min.js" />
+    <Content Include="Admin_Template\modules\zingchart-radar.min.js" />
+    <Content Include="Admin_Template\modules\zingchart-range.min.js" />
+    <Content Include="Admin_Template\modules\zingchart-rankflow.min.js" />
+    <Content Include="Admin_Template\modules\zingchart-refresh.min.js" />
+    <Content Include="Admin_Template\modules\zingchart-scalemarkers.min.js" />
+    <Content Include="Admin_Template\modules\zingchart-scatter.min.js" />
+    <Content Include="Admin_Template\modules\zingchart-scroll.min.js" />
+    <Content Include="Admin_Template\modules\zingchart-selection-tool.min.js" />
+    <Content Include="Admin_Template\modules\zingchart-selection.min.js" />
+    <Content Include="Admin_Template\modules\zingchart-stock.min.js" />
+    <Content Include="Admin_Template\modules\zingchart-stream.min.js" />
+    <Content Include="Admin_Template\modules\zingchart-svg-simple-selection.min.js" />
+    <Content Include="Admin_Template\modules\zingchart-toolbar3d.min.js" />
+    <Content Include="Admin_Template\modules\zingchart-tooltip.min.js" />
+    <Content Include="Admin_Template\modules\zingchart-treemap.min.js" />
+    <Content Include="Admin_Template\modules\zingchart-varea.min.js" />
+    <Content Include="Admin_Template\modules\zingchart-vbar.min.js" />
+    <Content Include="Admin_Template\modules\zingchart-vbar3d.min.js" />
+    <Content Include="Admin_Template\modules\zingchart-vbullet.min.js" />
+    <Content Include="Admin_Template\modules\zingchart-venn.min.js" />
+    <Content Include="Admin_Template\modules\zingchart-vfunnel.min.js" />
+    <Content Include="Admin_Template\modules\zingchart-vline.min.js" />
+    <Content Include="Admin_Template\modules\zingchart-waterfall.min.js" />
+    <Content Include="Admin_Template\modules\zingchart-wordcloud.min.js" />
+    <Content Include="Admin_Template\modules\zingchart-xy.min.js" />
+    <Content Include="Admin_Template\modules\zingchart-yx.min.js" />
+    <Content Include="Admin_Template\modules\zingchart-zoom.min.js" />
+    <Content Include="Admin_Template\price.html" />
+    <Content Include="Admin_Template\profile.html" />
+    <Content Include="Admin_Template\project.html" />
+    <Content Include="Admin_Template\settings.html" />
+    <Content Include="Admin_Template\style.css" />
+    <Content Include="Admin_Template\tables.html" />
+    <Content Include="Admin_Template\widgets.html" />
+    <Content Include="admin_yorum_liste_tasarım\assets\css\bootstrap-grid.css" />
+    <Content Include="admin_yorum_liste_tasarım\assets\css\bootstrap-grid.min.css" />
+    <Content Include="admin_yorum_liste_tasarım\assets\css\bootstrap-grid.rtl.css" />
+    <Content Include="admin_yorum_liste_tasarım\assets\css\bootstrap-grid.rtl.min.css" />
+    <Content Include="admin_yorum_liste_tasarım\assets\css\bootstrap-reboot.css" />
+    <Content Include="admin_yorum_liste_tasarım\assets\css\bootstrap-reboot.min.css" />
+    <Content Include="admin_yorum_liste_tasarım\assets\css\bootstrap-reboot.rtl.css" />
+    <Content Include="admin_yorum_liste_tasarım\assets\css\bootstrap-reboot.rtl.min.css" />
+    <Content Include="admin_yorum_liste_tasarım\assets\css\bootstrap-utilities.css" />
+    <Content Include="admin_yorum_liste_tasarım\assets\css\bootstrap-utilities.min.css" />
+    <Content Include="admin_yorum_liste_tasarım\assets\css\bootstrap-utilities.rtl.css" />
+    <Content Include="admin_yorum_liste_tasarım\assets\css\bootstrap-utilities.rtl.min.css" />
+    <Content Include="admin_yorum_liste_tasarım\assets\css\bootstrap.css" />
+    <Content Include="admin_yorum_liste_tasarım\assets\css\bootstrap.min.css" />
+    <Content Include="admin_yorum_liste_tasarım\assets\css\bootstrap.rtl.css" />
+    <Content Include="admin_yorum_liste_tasarım\assets\css\bootstrap.rtl.min.css" />
+    <Content Include="admin_yorum_liste_tasarım\assets\js\bootstrap.bundle.js" />
+    <Content Include="admin_yorum_liste_tasarım\assets\js\bootstrap.bundle.min.js" />
+    <Content Include="admin_yorum_liste_tasarım\assets\js\bootstrap.esm.js" />
+    <Content Include="admin_yorum_liste_tasarım\assets\js\bootstrap.esm.min.js" />
+    <Content Include="admin_yorum_liste_tasarım\assets\js\bootstrap.js" />
+    <Content Include="admin_yorum_liste_tasarım\assets\js\bootstrap.min.js" />
+    <Content Include="admin_yorum_liste_tasarım\img\msg1.png" />
+    <Content Include="admin_yorum_liste_tasarım\img\msg2.png" />
+    <Content Include="admin_yorum_liste_tasarım\img\msg3.png" />
+    <Content Include="admin_yorum_liste_tasarım\img\msg4.png" />
+    <Content Include="admin_yorum_liste_tasarım\img\msg5.png" />
+    <Content Include="admin_yorum_liste_tasarım\index.html" />
+    <Content Include="admin_yorum_liste_tasarım\style.css" />
+    <Content Include="Content\PagedList.css" />
+    <Content Include="favicon.ico" />
+    <Content Include="Global.asax" />
+    <Content Include="Content\Site.css" />
+    <Content Include="login_Page\CodePen_Export_QWgrPvp\dist\index.html" />
+    <Content Include="login_Page\CodePen_Export_QWgrPvp\dist\style.css" />
+    <Content Include="login_Page\CodePen_Export_QWgrPvp\license.txt" />
+    <Content Include="login_Page\CodePen_Export_QWgrPvp\src\index.html" />
+    <Content Include="login_Page\CodePen_Export_QWgrPvp\src\style.css" />
+    <Content Include="miniBlogTemplate\about.html" />
+    <Content Include="miniBlogTemplate\category.html" />
+    <Content Include="miniBlogTemplate\contact.html" />
+    <Content Include="miniBlogTemplate\css\aos.css" />
+    <Content Include="miniBlogTemplate\css\bootstrap-datepicker.css" />
+    <Content Include="miniBlogTemplate\css\bootstrap.min.css" />
+    <Content Include="miniBlogTemplate\css\bootstrap\bootstrap-grid.css" />
+    <Content Include="miniBlogTemplate\css\bootstrap\bootstrap-reboot.css" />
+    <Content Include="miniBlogTemplate\css\bootstrap\bootstrap.css" />
+    <Content Include="miniBlogTemplate\css\bootstrap\bootstrap.min.css" />
+    <Content Include="miniBlogTemplate\css\jquery-ui.css" />
+    <Content Include="miniBlogTemplate\css\magnific-popup.css" />
+    <Content Include="miniBlogTemplate\css\mediaelementplayer.css" />
+    <Content Include="miniBlogTemplate\css\owl.carousel.min.css" />
+    <Content Include="miniBlogTemplate\css\owl.theme.default.min.css" />
+    <Content Include="miniBlogTemplate\css\style.css" />
+    <Content Include="miniBlogTemplate\fonts\flaticon\backup.txt" />
+    <Content Include="miniBlogTemplate\fonts\flaticon\font\flaticon.css" />
+    <Content Include="miniBlogTemplate\fonts\flaticon\font\flaticon.html" />
+    <Content Include="miniBlogTemplate\fonts\flaticon\font\Flaticon.svg" />
+    <Content Include="miniBlogTemplate\fonts\flaticon\font\_flaticon.css" />
+    <Content Include="miniBlogTemplate\fonts\icomoon\demo-files\demo.css" />
+    <Content Include="miniBlogTemplate\fonts\icomoon\demo-files\demo.js" />
+    <Content Include="miniBlogTemplate\fonts\icomoon\demo.html" />
+    <Content Include="miniBlogTemplate\fonts\icomoon\fonts\icomoon.svg" />
+    <Content Include="miniBlogTemplate\fonts\icomoon\Read Me.txt" />
+    <Content Include="miniBlogTemplate\fonts\icomoon\style.css" />
+    <Content Include="miniBlogTemplate\images\cebupacific-booking.jpg" />
+    <Content Include="miniBlogTemplate\images\hero_1.jpg" />
+    <Content Include="miniBlogTemplate\images\img_1.jpg" />
+    <Content Include="miniBlogTemplate\images\img_2.jpg" />
+    <Content Include="miniBlogTemplate\images\img_3.jpg" />
+    <Content Include="miniBlogTemplate\images\img_4.jpg" />
+    <Content Include="miniBlogTemplate\images\img_v_1.jpg" />
+    <Content Include="miniBlogTemplate\images\img_v_2.jpg" />
+    <Content Include="miniBlogTemplate\images\person_1.jpg" />
+    <Content Include="miniBlogTemplate\images\person_2.jpg" />
+    <Content Include="miniBlogTemplate\images\person_3.jpg" />
+    <Content Include="miniBlogTemplate\images\person_4.jpg" />
+    <Content Include="miniBlogTemplate\images\person_5.jpg" />
+    <Content Include="miniBlogTemplate\index.html" />
+    <Content Include="miniBlogTemplate\js\aos.js" />
+    <Content Include="miniBlogTemplate\js\bootstrap-datepicker.min.js" />
+    <Content Include="miniBlogTemplate\js\bootstrap.min.js" />
+    <Content Include="miniBlogTemplate\js\jquery-3.3.1.min.js" />
+    <Content Include="miniBlogTemplate\js\jquery-migrate-3.0.1.min.js" />
+    <Content Include="miniBlogTemplate\js\jquery-ui.js" />
+    <Content Include="miniBlogTemplate\js\jquery.countdown.min.js" />
+    <Content Include="miniBlogTemplate\js\jquery.magnific-popup.min.js" />
+    <Content Include="miniBlogTemplate\js\jquery.stellar.min.js" />
+    <Content Include="miniBlogTemplate\js\main.js" />
+    <Content Include="miniBlogTemplate\js\mediaelement-and-player.min.js" />
+    <Content Include="miniBlogTemplate\js\owl.carousel.min.js" />
+    <Content Include="miniBlogTemplate\js\popper.min.js" />
+    <Content Include="miniBlogTemplate\js\slick.min.js" />
+    <Content Include="miniBlogTemplate\single.html" />
+    <Content Include="miniBlogTemplate\.DS_Store" />
+    <Content Include="miniBlogTemplate\css\.DS_Store" />
+    <Content Include="miniBlogTemplate\fonts\.DS_Store" />
+    <Content Include="miniBlogTemplate\fonts\flaticon\font\Flaticon.eot" />
+    <Content Include="miniBlogTemplate\fonts\flaticon\font\Flaticon.ttf" />
+    <Content Include="miniBlogTemplate\fonts\flaticon\font\Flaticon.woff" />
+    <Content Include="miniBlogTemplate\fonts\flaticon\font\Flaticon.woff2" />
+    <Content Include="miniBlogTemplate\fonts\flaticon\font\_flaticon.scss" />
+    <Content Include="miniBlogTemplate\fonts\flaticon\license\license.pdf" />
+    <Content Include="miniBlogTemplate\fonts\icomoon\fonts\icomoon.eot" />
+    <Content Include="miniBlogTemplate\fonts\icomoon\fonts\icomoon.ttf" />
+    <Content Include="miniBlogTemplate\fonts\icomoon\fonts\icomoon.woff" />
+    <Content Include="miniBlogTemplate\fonts\icomoon\selection.json" />
+    <Content Include="miniBlogTemplate\images\.DS_Store" />
+    <Content Include="miniBlogTemplate\prepros-6.config" />
+    <Content Include="miniBlogTemplate\scss\.DS_Store" />
+    <Content Include="miniBlogTemplate\scss\bootstrap\.DS_Store" />
+    <Content Include="miniBlogTemplate\scss\bootstrap\bootstrap-grid.scss" />
+    <Content Include="miniBlogTemplate\scss\bootstrap\bootstrap-reboot.scss" />
+    <Content Include="miniBlogTemplate\scss\bootstrap\bootstrap.scss" />
+    <Content Include="miniBlogTemplate\scss\bootstrap\mixins\_alert.scss" />
+    <Content Include="miniBlogTemplate\scss\bootstrap\mixins\_background-variant.scss" />
+    <Content Include="miniBlogTemplate\scss\bootstrap\mixins\_badge.scss" />
+    <Content Include="miniBlogTemplate\scss\bootstrap\mixins\_border-radius.scss" />
+    <Content Include="miniBlogTemplate\scss\bootstrap\mixins\_box-shadow.scss" />
+    <Content Include="miniBlogTemplate\scss\bootstrap\mixins\_breakpoints.scss" />
+    <Content Include="miniBlogTemplate\scss\bootstrap\mixins\_buttons.scss" />
+    <Content Include="miniBlogTemplate\scss\bootstrap\mixins\_caret.scss" />
+    <Content Include="miniBlogTemplate\scss\bootstrap\mixins\_clearfix.scss" />
+    <Content Include="miniBlogTemplate\scss\bootstrap\mixins\_float.scss" />
+    <Content Include="miniBlogTemplate\scss\bootstrap\mixins\_forms.scss" />
+    <Content Include="miniBlogTemplate\scss\bootstrap\mixins\_gradients.scss" />
+    <Content Include="miniBlogTemplate\scss\bootstrap\mixins\_grid-framework.scss" />
+    <Content Include="miniBlogTemplate\scss\bootstrap\mixins\_grid.scss" />
+    <Content Include="miniBlogTemplate\scss\bootstrap\mixins\_hover.scss" />
+    <Content Include="miniBlogTemplate\scss\bootstrap\mixins\_image.scss" />
+    <Content Include="miniBlogTemplate\scss\bootstrap\mixins\_list-group.scss" />
+    <Content Include="miniBlogTemplate\scss\bootstrap\mixins\_lists.scss" />
+    <Content Include="miniBlogTemplate\scss\bootstrap\mixins\_nav-divider.scss" />
+    <Content Include="miniBlogTemplate\scss\bootstrap\mixins\_pagination.scss" />
+    <Content Include="miniBlogTemplate\scss\bootstrap\mixins\_reset-text.scss" />
+    <Content Include="miniBlogTemplate\scss\bootstrap\mixins\_resize.scss" />
+    <Content Include="miniBlogTemplate\scss\bootstrap\mixins\_screen-reader.scss" />
+    <Content Include="miniBlogTemplate\scss\bootstrap\mixins\_size.scss" />
+    <Content Include="miniBlogTemplate\scss\bootstrap\mixins\_table-row.scss" />
+    <Content Include="miniBlogTemplate\scss\bootstrap\mixins\_text-emphasis.scss" />
+    <Content Include="miniBlogTemplate\scss\bootstrap\mixins\_text-hide.scss" />
+    <Content Include="miniBlogTemplate\scss\bootstrap\mixins\_text-truncate.scss" />
+    <Content Include="miniBlogTemplate\scss\bootstrap\mixins\_transition.scss" />
+    <Content Include="miniBlogTemplate\scss\bootstrap\mixins\_visibility.scss" />
+    <Content Include="miniBlogTemplate\scss\bootstrap\utilities\_align.scss" />
+    <Content Include="miniBlogTemplate\scss\bootstrap\utilities\_background.scss" />
+    <Content Include="miniBlogTemplate\scss\bootstrap\utilities\_borders.scss" />
+    <Content Include="miniBlogTemplate\scss\bootstrap\utilities\_clearfix.scss" />
+    <Content Include="miniBlogTemplate\scss\bootstrap\utilities\_display.scss" />
+    <Content Include="miniBlogTemplate\scss\bootstrap\utilities\_embed.scss" />
+    <Content Include="miniBlogTemplate\scss\bootstrap\utilities\_flex.scss" />
+    <Content Include="miniBlogTemplate\scss\bootstrap\utilities\_float.scss" />
+    <Content Include="miniBlogTemplate\scss\bootstrap\utilities\_position.scss" />
+    <Content Include="miniBlogTemplate\scss\bootstrap\utilities\_screenreaders.scss" />
+    <Content Include="miniBlogTemplate\scss\bootstrap\utilities\_shadows.scss" />
+    <Content Include="miniBlogTemplate\scss\bootstrap\utilities\_sizing.scss" />
+    <Content Include="miniBlogTemplate\scss\bootstrap\utilities\_spacing.scss" />
+    <Content Include="miniBlogTemplate\scss\bootstrap\utilities\_text.scss" />
+    <Content Include="miniBlogTemplate\scss\bootstrap\utilities\_visibility.scss" />
+    <Content Include="miniBlogTemplate\scss\bootstrap\_alert.scss" />
+    <Content Include="miniBlogTemplate\scss\bootstrap\_badge.scss" />
+    <Content Include="miniBlogTemplate\scss\bootstrap\_breadcrumb.scss" />
+    <Content Include="miniBlogTemplate\scss\bootstrap\_button-group.scss" />
+    <Content Include="miniBlogTemplate\scss\bootstrap\_buttons.scss" />
+    <Content Include="miniBlogTemplate\scss\bootstrap\_card.scss" />
+    <Content Include="miniBlogTemplate\scss\bootstrap\_carousel.scss" />
+    <Content Include="miniBlogTemplate\scss\bootstrap\_close.scss" />
+    <Content Include="miniBlogTemplate\scss\bootstrap\_code.scss" />
+    <Content Include="miniBlogTemplate\scss\bootstrap\_custom-forms.scss" />
+    <Content Include="miniBlogTemplate\scss\bootstrap\_dropdown.scss" />
+    <Content Include="miniBlogTemplate\scss\bootstrap\_forms.scss" />
+    <Content Include="miniBlogTemplate\scss\bootstrap\_functions.scss" />
+    <Content Include="miniBlogTemplate\scss\bootstrap\_grid.scss" />
+    <Content Include="miniBlogTemplate\scss\bootstrap\_images.scss" />
+    <Content Include="miniBlogTemplate\scss\bootstrap\_input-group.scss" />
+    <Content Include="miniBlogTemplate\scss\bootstrap\_jumbotron.scss" />
+    <Content Include="miniBlogTemplate\scss\bootstrap\_list-group.scss" />
+    <Content Include="miniBlogTemplate\scss\bootstrap\_media.scss" />
+    <Content Include="miniBlogTemplate\scss\bootstrap\_mixins.scss" />
+    <Content Include="miniBlogTemplate\scss\bootstrap\_modal.scss" />
+    <Content Include="miniBlogTemplate\scss\bootstrap\_nav.scss" />
+    <Content Include="miniBlogTemplate\scss\bootstrap\_navbar.scss" />
+    <Content Include="miniBlogTemplate\scss\bootstrap\_pagination.scss" />
+    <Content Include="miniBlogTemplate\scss\bootstrap\_popover.scss" />
+    <Content Include="miniBlogTemplate\scss\bootstrap\_print.scss" />
+    <Content Include="miniBlogTemplate\scss\bootstrap\_progress.scss" />
+    <Content Include="miniBlogTemplate\scss\bootstrap\_reboot.scss" />
+    <Content Include="miniBlogTemplate\scss\bootstrap\_root.scss" />
+    <Content Include="miniBlogTemplate\scss\bootstrap\_tables.scss" />
+    <Content Include="miniBlogTemplate\scss\bootstrap\_tooltip.scss" />
+    <Content Include="miniBlogTemplate\scss\bootstrap\_transitions.scss" />
+    <Content Include="miniBlogTemplate\scss\bootstrap\_type.scss" />
+    <Content Include="miniBlogTemplate\scss\bootstrap\_utilities.scss" />
+    <Content Include="miniBlogTemplate\scss\bootstrap\_variables.scss" />
+    <Content Include="miniBlogTemplate\scss\style.scss" />
+    <Content Include="miniBlogTemplate\scss\_site-base.scss" />
+    <Content Include="miniBlogTemplate\scss\_site-blocks.scss" />
+    <Content Include="miniBlogTemplate\scss\_site-navbar.scss" />
+    <Content Include="Scripts\esm\popper-utils.js" />
+    <Content Include="Scripts\esm\popper-utils.min.js" />
+    <Content Include="Scripts\esm\popper.js" />
+    <Content Include="Scripts\esm\popper.min.js" />
+    <Content Include="Scripts\esm\popper.min.js.map" />
+    <Content Include="Scripts\esm\popper.js.map" />
+    <Content Include="Scripts\esm\popper-utils.min.js.map" />
+    <Content Include="Scripts\esm\popper-utils.js.map" />
+    <Content Include="Admin_Template\.DS_Store" />
+    <Content Include="Admin_Template\css\bootstrap-grid.css.map" />
+    <Content Include="Admin_Template\css\bootstrap-grid.min.css.map" />
+    <Content Include="Admin_Template\css\bootstrap-reboot.css.map" />
+    <Content Include="Admin_Template\css\bootstrap-reboot.min.css.map" />
+    <Content Include="Admin_Template\css\bootstrap.css.map" />
+    <Content Include="Admin_Template\css\bootstrap.min.css.map" />
+    <Content Include="Admin_Template\fonts\Flaticon.eot" />
+    <Content Include="Admin_Template\fonts\Flaticon.ttf" />
+    <Content Include="Admin_Template\fonts\Flaticon.woff" />
+    <Content Include="Admin_Template\fonts\fontawesome-webfont.eot" />
+    <Content Include="Admin_Template\fonts\fontawesome-webfont.ttf" />
+    <Content Include="Admin_Template\fonts\fontawesome-webfont.woff" />
+    <Content Include="Admin_Template\fonts\fontawesome-webfont.woff2" />
+    <Content Include="Admin_Template\fonts\FontAwesome.otf" />
+    <Content Include="Admin_Template\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Admin_Template\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="Admin_Template\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="Admin_Template\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="Admin_Template\fonts\_flaticon.scss" />
+    <Content Include="Admin_Template\images\.DS_Store" />
+    <Content Include="Admin_Template\images\layout_img\.DS_Store" />
+    <Content Include="Admin_Template\js\bootstrap.bundle.js.map" />
+    <Content Include="Admin_Template\js\bootstrap.bundle.min.js.map" />
+    <Content Include="Admin_Template\js\bootstrap.js.map" />
+    <Content Include="Admin_Template\js\bootstrap.min.js.map" />
+    <Content Include="Admin_Template\modules\.DS_Store" />
+    <Content Include="admin_yorum_liste_tasarım\assets\css\bootstrap-grid.css.map" />
+    <Content Include="admin_yorum_liste_tasarım\assets\css\bootstrap-grid.min.css.map" />
+    <Content Include="admin_yorum_liste_tasarım\assets\css\bootstrap-grid.rtl.css.map" />
+    <Content Include="admin_yorum_liste_tasarım\assets\css\bootstrap-grid.rtl.min.css.map" />
+    <Content Include="admin_yorum_liste_tasarım\assets\css\bootstrap-reboot.css.map" />
+    <Content Include="admin_yorum_liste_tasarım\assets\css\bootstrap-reboot.min.css.map" />
+    <Content Include="admin_yorum_liste_tasarım\assets\css\bootstrap-reboot.rtl.css.map" />
+    <Content Include="admin_yorum_liste_tasarım\assets\css\bootstrap-reboot.rtl.min.css.map" />
+    <Content Include="admin_yorum_liste_tasarım\assets\css\bootstrap-utilities.css.map" />
+    <Content Include="admin_yorum_liste_tasarım\assets\css\bootstrap-utilities.min.css.map" />
+    <Content Include="admin_yorum_liste_tasarım\assets\css\bootstrap-utilities.rtl.css.map" />
+    <Content Include="admin_yorum_liste_tasarım\assets\css\bootstrap-utilities.rtl.min.css.map" />
+    <Content Include="admin_yorum_liste_tasarım\assets\css\bootstrap.css.map" />
+    <Content Include="admin_yorum_liste_tasarım\assets\css\bootstrap.min.css.map" />
+    <Content Include="admin_yorum_liste_tasarım\assets\css\bootstrap.rtl.css.map" />
+    <Content Include="admin_yorum_liste_tasarım\assets\css\bootstrap.rtl.min.css.map" />
+    <Content Include="admin_yorum_liste_tasarım\assets\js\bootstrap.bundle.js.map" />
+    <Content Include="admin_yorum_liste_tasarım\assets\js\bootstrap.bundle.min.js.map" />
+    <Content Include="admin_yorum_liste_tasarım\assets\js\bootstrap.esm.js.map" />
+    <Content Include="admin_yorum_liste_tasarım\assets\js\bootstrap.esm.min.js.map" />
+    <Content Include="admin_yorum_liste_tasarım\assets\js\bootstrap.js.map" />
+    <Content Include="admin_yorum_liste_tasarım\assets\js\bootstrap.min.js.map" />
+    <Content Include="login_Page\CodePen_Export_QWgrPvp\README.markdown" />
+    <None Include="Scripts\jquery-3.3.1.intellisense.js" />
+    <Content Include="Scripts\jquery-3.3.1.js" />
+    <Content Include="Scripts\jquery-3.3.1.min.js" />
+    <Content Include="Scripts\jquery-3.3.1.slim.js" />
+    <Content Include="Scripts\jquery-3.3.1.slim.min.js" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Scripts\popper-utils.js" />
+    <Content Include="Scripts\popper-utils.min.js" />
+    <Content Include="Scripts\popper.js" />
+    <Content Include="Scripts\popper.min.js" />
+    <Content Include="Scripts\umd\popper-utils.js" />
+    <Content Include="Scripts\umd\popper-utils.min.js" />
+    <Content Include="Scripts\umd\popper.js" />
+    <Content Include="Scripts\umd\popper.min.js" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Home\About.cshtml" />
+    <Content Include="Views\Home\Contact.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Shared\Layout.cshtml" />
+    <Content Include="Views\Blog\Index.cshtml" />
+    <Content Include="Scripts\umd\popper.min.js.map" />
+    <Content Include="Scripts\umd\popper.js.map" />
+    <Content Include="Scripts\umd\popper-utils.min.js.map" />
+    <Content Include="Scripts\umd\popper-utils.js.map" />
+    <Content Include="Scripts\README.md" />
+    <Content Include="Scripts\popper.min.js.map" />
+    <Content Include="Scripts\popper.js.map" />
+    <Content Include="Scripts\popper-utils.min.js.map" />
+    <Content Include="Scripts\popper-utils.js.map" />
+    <Content Include="Views\Blog\BlogListPartial.cshtml" />
+    <Content Include="Views\Blog\BlogList.cshtml" />
+    <Content Include="Views\Blog\FeaturePost.cshtml" />
+    <Content Include="Views\About\Footer.cshtml" />
+    <Content Include="Views\Blog\BlogDetails.cshtml" />
+    <Content Include="Views\Blog\Blogcover.cshtml" />
+    <Content Include="Views\Blog\BlogReadAll.cshtml" />
+    <Content Include="Views\Comment\CommnetList.cshtml" />
+    <Content Include="Views\Comment\LeaveComment.cshtml" />
+    <Content Include="Views\AuthorAbout\Author.cshtml" />
+    <Content Include="Views\AuthorAbout\AuthorPopularPost.cshtml" />
+    <Content Include="Views\AuthorAbout\BlogCategoryList.cshtml" />
+    <Content Include="Views\Category\BlogCategoryList.cshtml" />
+    <Content Include="Views\About\Index.cshtml" />
+    <Content Include="Views\About\MeetTheTeam.cshtml" />
+    <Content Include="Views\Contact\Index.cshtml" />
+    <Content Include="Views\Blog\BlogByCategory.cshtml" />
+    <Content Include="Views\MailSubscribe\MailSubscribeContent.cshtml" />
+    <Content Include="Views\Shared\AdminLayout.cshtml" />
+    <Content Include="Views\Blog\AdminBlog.cshtml" />
+    <Content Include="Views\Blog\AddNewBlog.cshtml" />
+    <Content Include="Views\Blog\GetBlogDetails.cshtml" />
+    <Content Include="Views\Blog\BlogCommentDetails.cshtml" />
+    <Content Include="Views\Author\Index.cshtml" />
+    <Content Include="Views\Author\AddNewAuthor.cshtml" />
+    <Content Include="Views\Author\FindAuthorId.cshtml" />
+    <Content Include="Views\Comment\CommentListTrue.cshtml" />
+    <Content Include="Views\Comment\CommentListFalse.cshtml" />
+    <Content Include="Views\Category\AdminCategoryList.cshtml" />
+    <Content Include="Views\Category\ForCategoryBlogList.cshtml" />
+    <Content Include="Views\Category\CategoryUpdate.cshtml" />
+    <Content Include="Views\About\AdminAboutList.cshtml" />
+    <Content Include="Views\Message\SendMessage.cshtml" />
+    <Content Include="Views\Message\IncomingMessage.cshtml" />
+    <Content Include="Views\Contact\AdminContactList.cshtml" />
+    <Content Include="Views\Contact\getContactDetails.cshtml" />
+    <Content Include="Views\Chart\Chart.cshtml" />
+    <Content Include="Views\Shared\AuthorLayout.cshtml" />
+    <Content Include="Views\User\Index.cshtml" />
+    <Content Include="Views\Login\UserLogin.cshtml" />
+    <Content Include="Views\User\AuthorInfo.cshtml" />
+    <Content Include="Views\User\Partial1.cshtml" />
+    <Content Include="Views\User\GetBlogByAuthor.cshtml" />
+    <Content Include="Views\User\UpdateBlog.cshtml" />
+    <Content Include="Views\User\AddBlog.cshtml" />
+    <Content Include="Views\Errors\ErrosPage.cshtml" />
+    <Content Include="Views\Admin\AdminLogin.cshtml" />
+    <Content Include="Views\Blog\BlogByAuthor.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Views\AdminAuthor\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+    <Content Include="Scripts\jquery-3.3.1.slim.min.map" />
+    <Content Include="Scripts\jquery-3.3.1.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <TypeScriptCompile Include="Scripts\index.d.ts" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BusinessLayer\BusinessLayer.csproj">
+      <Project>{26b5d823-f363-4a58-a7f2-9022a13066e0}</Project>
+      <Name>BusinessLayer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DataAccessLayer\DataAccessLayer.csproj">
+      <Project>{9b2104d4-1dc6-4235-95a4-701e7e8446c7}</Project>
+      <Name>DataAccessLayer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\EntityLayer\EntityLayer.csproj">
+      <Project>{d6f052ab-bf8d-4f5e-87a3-5eb7b55f00c4}</Project>
+      <Name>EntityLayer</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets')" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>60087</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:60086/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

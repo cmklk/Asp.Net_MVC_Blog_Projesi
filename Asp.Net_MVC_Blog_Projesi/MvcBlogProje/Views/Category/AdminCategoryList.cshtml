@@ -1,0 +1,92 @@
+﻿@using EntityLayer.Concrete
+@model List<Category>
+@{
+    ViewBag.Title = "AdminCategoryList";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+@{string color = "";}
+<h2 class="my-4 text-danger">KATEGORİ LİSTESİ</h2>
+
+<table class="table table-striped table-hover">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>KATEGORİ ADI</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        @foreach (var x in Model)
+        {
+
+            if(x.CategoryStatus == true)
+            {
+                color = "badge badge-success text-white";
+            }
+
+            else
+            {
+                color = "badge badge-danger text-white";
+            }
+
+
+
+
+            <tr>
+                <td>@x.CategoryId</td>
+                <td>@x.CategoryName</td>
+                <td class="@color">@x.CategoryStatus</td>
+                <td><a href="/Category/ForCategoryBlogList/@x.CategoryId" class="btn btn-primary">YAZILAR <i class="fa fa-file"></i></a></td>
+                <td><a href="/Category/CategoryUpdate/@x.CategoryId" class="btn btn-warning text-white">GÜNCELLE <i class="fa fa-refresh"></i></a></td>
+                <td><a href="/Category/CategoryDelete/@x.CategoryId" class="btn btn-danger">PASİF YAP <i class="fa fa-trash"></i></a></td>
+                <td><a href="/Category/CategoryStatusTrue/@x.CategoryId" class="btn btn-info">AKTİF YAP <i class="fa fa-pencil"></i></a></td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+
+
+<!-- Button trigger modal -->
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+    Launch demo modal
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+
+            <form method="post" action="/Category/CategoryAdd/">
+
+
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label>KATEGORİ ADI</label>
+                        <input type="text" class="form-control" name="CategoryName" />
+                    </div>
+
+                    <div class="form-group">
+                        <label>KATEGORİ AÇIKLAMA</label>
+                        <input type="text" class="form-control" name="CategoryDescription" />
+                    </div>
+
+                   
+                        <button  class="btn btn-primary">KATEGORİ EKLE <i class="fa fa-save"></i></button>
+                  
+                </div>
+              
+
+            </form>
+          
+        </div>
+    </div>
+</div>
+
